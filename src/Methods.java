@@ -1,13 +1,13 @@
 public class Methods {
 
     public static void printGrid(String[][] grid){
-        System.out.println("-------------------" +
+        System.out.println("-------------" +
                 "\n| " + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + " | " +
-                "\n-------------------" +
+                "\n-------------" +
                 "\n| " + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + " | " +
-                "\n-------------------" +
+                "\n-------------" +
                 "\n| " + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + " | " +
-                "\n-------------------");
+                "\n-------------");
     }
 
     public static String checkWinner(String[][] grid){
