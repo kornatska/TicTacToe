@@ -6,6 +6,11 @@ public class Game {
     public static void main(String[] args) {
 
         String[][] grid = new String[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                grid[i][j] = "_";
+            }
+        }
         String player1 = "X";
         String player2 = "O";
         String winner = "";
@@ -20,7 +25,7 @@ public class Game {
                 int lineNumber = scan.nextInt() - 1;
                 System.out.println("Player 1 (X) enter 1-3 for column: ");
                 int columnNumber = scan.nextInt() - 1;
-                if (grid[lineNumber][columnNumber] == null) {
+                if (grid[lineNumber][columnNumber].equals("_")) {
                     grid[lineNumber][columnNumber] = "X";
                 } else {
                     System.out.println("this cell is used");
@@ -31,7 +36,7 @@ public class Game {
                 int lineNumber = scan.nextInt() - 1;
                 System.out.println("Player 2 (Y) enter 1-3 for column: ");
                 int columnNumber = scan.nextInt() - 1;
-                if (grid[lineNumber][columnNumber] == null) {
+                if (grid[lineNumber][columnNumber].equals("_")) {
                     grid[lineNumber][columnNumber] = "Y";
                 } else {
                     System.out.println("this cell is used");
@@ -40,9 +45,10 @@ public class Game {
             }
 
         Methods.printGrid(grid);
-        System.out.println(Methods.checkWinner(grid) + " WINS!");
-
-
+            if (Methods.checkWinner(grid).contains("Player")) {
+                System.out.println(Methods.checkWinner(grid) + " WINS!");
+                break;
+            }
     }
 
 }}
