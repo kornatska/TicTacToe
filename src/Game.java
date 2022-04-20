@@ -6,42 +6,43 @@ public class Game {
     public static void main(String[] args) {
 
         String[][] grid = new String[3][3];
+        String player1 = "X";
+        String player2 = "O";
+        String winner = "";
 
-        String game = "-------------------" +
-                "\n| " + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + " | " +
-                "\n-------------------" +
-                "\n| " + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + " | " +
-                "\n-------------------" +
-                "\n| " + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + " | " +
-                "\n-------------------";
-
-        System.out.println(game);
-
+        Methods.printGrid(grid);
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Player 1 (X) enter 1-3 for line: ");
-        int lineNumber = scan.nextInt() - 1;
-        System.out.println("Player 1 (X) enter 1-3 for column: ");
-        int columnNumber = scan.nextInt() - 1;
-        if (grid[lineNumber][columnNumber] == null) {
-            grid[lineNumber][columnNumber] = "X";
+        for (int i = 0; i < 9; i++) {
 
+            if (i%2 == 0) {
+                System.out.println("Player 1 (X) enter 1-3 for line: ");
+                int lineNumber = scan.nextInt() - 1;
+                System.out.println("Player 1 (X) enter 1-3 for column: ");
+                int columnNumber = scan.nextInt() - 1;
+                if (grid[lineNumber][columnNumber] == null) {
+                    grid[lineNumber][columnNumber] = "X";
+                } else {
+                    System.out.println("this cell is used");
+                    i--;
+                }
+            } else {
+                System.out.println("Player 2 (Y) enter 1-3 for line: ");
+                int lineNumber = scan.nextInt() - 1;
+                System.out.println("Player 2 (Y) enter 1-3 for column: ");
+                int columnNumber = scan.nextInt() - 1;
+                if (grid[lineNumber][columnNumber] == null) {
+                    grid[lineNumber][columnNumber] = "Y";
+                } else {
+                    System.out.println("this cell is used");
+                    i--;
+                }
+            }
 
-        } else {
-            System.out.println("this cell is used");
-        }
-
-
-        System.out.println("-------------------" +
-                "\n| " + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + " | " +
-                "\n-------------------" +
-                "\n| " + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + " | " +
-                "\n-------------------" +
-                "\n| " + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + " | " +
-                "\n-------------------");
-
+        Methods.printGrid(grid);
+        System.out.println(Methods.checkWinner(grid) + " WINS!");
 
 
     }
 
-}
+}}
