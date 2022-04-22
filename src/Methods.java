@@ -26,16 +26,16 @@ public class Methods {
             }
         }
         if (grid[0][0].equals("O") && grid[1][1].equals("O") && grid[2][2].equals("O")) {
-            winner = "Player 1 (X)";
+            winner = "Player 2 (O)";
         }
         if (grid[2][0].equals("O") && grid[1][1].equals("O") && grid[0][2].equals("O")) {
-            winner = "Player 1 (X)";
+            winner = "Player 2 (O)";
         }
         for (int j = 0; j < 3; j++) {
             if (grid[j][0].equals("O") && grid[j][1].equals("O") && grid[j][2].equals("O")) {
-                winner = "Player 1 (X)";
+                winner = "Player 2 (O)";
             } else if (grid[0][j].equals("O") && grid[1][j].equals("O") && grid[2][j].equals("O")) {
-                winner = "Player 1 (X)";
+                winner = "Player 2 (O)";
             }
         }
         return winner;
