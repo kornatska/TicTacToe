@@ -11,9 +11,7 @@ public class Game {
                 grid[i][j] = "_";
             }
         }
-        String player1 = "X";
-        String player2 = "O";
-        String winner = "";
+
 
         Methods.printGrid(grid);
         Scanner scan = new Scanner(System.in);
