@@ -12,7 +12,6 @@ public class Game {
             }
         }
 
-
         Methods.printGrid(grid);
         Scanner scan = new Scanner(System.in);
 
@@ -30,12 +29,12 @@ public class Game {
                     i--;
                 }
             } else {
-                System.out.println("Player 2 (Y) enter 1-3 for line: ");
+                System.out.println("Player 2 (O) enter 1-3 for line: ");
                 int lineNumber = scan.nextInt() - 1;
-                System.out.println("Player 2 (Y) enter 1-3 for column: ");
+                System.out.println("Player 2 (O) enter 1-3 for column: ");
                 int columnNumber = scan.nextInt() - 1;
                 if (grid[lineNumber][columnNumber].equals("_")) {
-                    grid[lineNumber][columnNumber] = "Y";
+                    grid[lineNumber][columnNumber] = "O";
                 } else {
                     System.out.println("this cell is used");
                     i--;
@@ -45,6 +44,7 @@ public class Game {
         Methods.printGrid(grid);
             if (Methods.checkWinner(grid).contains("Player")) {
                 System.out.println(Methods.checkWinner(grid) + " WINS!");
+                System.out.println("YAY!");
                 break;
             }
     }
